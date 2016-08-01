@@ -21,7 +21,7 @@ int main(int argc, char** argv) {
   /* Do some parsing here... */
 
   mpc_cleanup(4, Adjective, Noun, Phrase, Doge);
-  
+
   return 0;
-  
+
 }

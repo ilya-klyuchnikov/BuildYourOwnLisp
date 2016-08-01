@@ -1,6 +1,6 @@
 CC = cc
 CFLAGS = -std=c99 -Wall -g
-LFLAGS = 
+LFLAGS =
 FILES = hello_world prompt doge_code doge_grammar parsing evaluation error_handling s_expressions q_expressions variables functions conditionals strings
 PLATFORM = $(shell uname)
 
@@ -22,4 +22,3 @@ all: $(FILES)
 
 %: %.c mpc.c
 	$(CC) $(CFLAGS) $^ $(LFLAGS) -o $@
-  

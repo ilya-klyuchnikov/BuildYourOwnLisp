@@ -51,7 +51,7 @@
 ; Minimum of Arguments
 (fun {min & xs} {
   if (== (tail xs) nil) {fst xs}
-    {do 
+    {do
       (= {rest} (unpack min (tail xs)))
       (= {item} (fst xs))
       (if (< item rest) {item} {rest})
@@ -61,11 +61,11 @@
 ; Maximum of Arguments
 (fun {max & xs} {
   if (== (tail xs) nil) {fst xs}
-    {do 
+    {do
       (= {rest} (unpack max (tail xs)))
       (= {item} (fst xs))
       (if (> item rest) {item} {rest})
-    }  
+    }
 })
 
 ;;; Conditional Functions
@@ -146,14 +146,14 @@
 
 ; Fold Left
 (fun {foldl f z l} {
-  if (== l nil) 
+  if (== l nil)
     {z}
     {foldl f (f z (fst l)) (tail l)}
 })
 
 ; Fold Right
 (fun {foldr f z l} {
-  if (== l nil) 
+  if (== l nil)
     {z}
     {f (fst l) (foldr f z (tail l))}
 })
@@ -237,4 +237,3 @@
     { (== n 1) 1 }
     { otherwise (+ (fib (- n 1)) (fib (- n 2))) }
 })
-
