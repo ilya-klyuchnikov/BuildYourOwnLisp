@@ -1,5 +1,5 @@
 CC = cc
-CFLAGS = -std=c99 -Wall -g
+CFLAGS = -std=c99 -Wall
 LFLAGS =
 FILES = hello_world prompt doge_code doge_grammar parsing evaluation error_handling s_expressions q_expressions variables functions conditionals strings
 PLATFORM = $(shell uname)
@@ -10,7 +10,7 @@ ifeq ($(findstring Linux,$(PLATFORM)),Linux)
 endif
 
 ifeq ($(findstring Darwin,$(PLATFORM)),Darwin)
-	LFLAGS += -ledit -lm
+	LFLAGS += -l edit -l m
 	FILES += prompt_unix
 endif
 
@@ -22,3 +22,7 @@ all: $(FILES)
 
 %: %.c mpc.c
 	$(CC) $(CFLAGS) $^ $(LFLAGS) -o $@
+
+clean:
+	rm -f $(FILES)
+	rm -rf *.dSYM
