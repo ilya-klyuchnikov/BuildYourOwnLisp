@@ -1,8 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#if __APPLE__
+#include <editline/readline.h>
+#else
 #include <editline/readline.h>
 #include <editline/history.h>
+#endif
 
 int main(int argc, char** argv) {
 

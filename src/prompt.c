@@ -21,6 +21,8 @@ char* readline(char* prompt) {
 void add_history(char* unused) {}
 
 /* Otherwise include the editline headers */
+#elif __APPLE__
+#include <editline/readline.h>
 #else
 #include <editline/readline.h>
 #include <editline/history.h>
